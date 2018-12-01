@@ -1,0 +1,54 @@
+
+// developer menu enable from options (file menu)
+
+// short cut key : alt+f11 code,excel
+
+Dim a, b As Integer
+Dim c As String
+Private Sub CommandButton1_Click()
+a = TextBox1.Text
+b = TextBox2.Text
+If (a > 34 And b > 34) Then
+c = "pass"
+    If (a >= 85 And b >= 85) Then
+    TextBox3.Text = c & "above 85 outstanding"
+    ElseIf (a >= 75 And b >= 75) Then
+    TextBox3.Text = c & "above 75 excellent"
+    ElseIf (a >= 50 And b >= 50) Then
+    TextBox3.Text = c & "above 50 good"
+    Else
+    TextBox3.Text = c & "below 50 pair"
+    End If
+Else
+TextBox3.Text = "Fail"
+End If
+Sheet1.Cells(10, 12) = a + b
+End Sub
+
+Private Sub CommandButton2_Click()
+
+If (Val(TextBox1.Text) >= 35) Then
+TextBox1.BackColor = vbGreen
+Sheet1.Range("l10").Interior.Color = RGB(0, 255, 0)
+Else
+TextBox1.BackColor = vbRed
+Sheet1.Range("l10").Interior.Color = RGB(255, 0, 255)
+Sheet1.Range("l10").Interior.ColorIndex = 20
+Sheet1.Range("l10").Borders.ColorIndex = 25
+
+Sheet1.Range("l10").Font.Color = RGB(255, 0, 0)
+
+End If
+
+If (Val(TextBox2.Text) >= 35) Then
+TextBox2.BackColor = vbGreen
+Else
+TextBox2.BackColor = vbRed
+End If
+
+End Sub
+
+Private Sub Worksheet_Activate()
+Sheet1.Cells(1, 5) = "addition of two numbers"
+End Sub
+
