@@ -79,5 +79,44 @@ Next
 End Sub
 
 
+//== button click ================== unjoined list =================
+
+Dim i, j As Integer
+Private Sub CommandButton1_Click()
+j = 2
+For i = 2 To 500
+    Sheet11.Cells(j, 1) = ""
+     Sheet11.Cells(j, 2) = ""
+    Sheet11.Cells(j, 3) = ""
+    Sheet11.Cells(j, 4) = ""
+    Sheet11.Cells(j, 5) = ""
+    Sheet11.Cells(j, 6) = ""
+    Sheet11.Cells(j, 7) = ""
+    Sheet11.Cells(j, 8) = ""
+    Sheet11.Cells(j, 9) = ""
+    Sheet11.Cells(j, 10) = ""
+    Sheet11.Cells(j, 11) = ""
+    Sheet11.Cells(j, 12) = ""
+    j = j + 1
+Next
+j = 2
+For i = 2 To 500
+    If (Len(Trim(Sheet1.Cells(i, 12))) = 0) Then
+    Sheet11.Cells(j, 1) = Sheet1.Cells(i, 1)
+    Sheet11.Cells(j, 2) = Sheet1.Cells(i, 2)
+    Sheet11.Cells(j, 3) = Sheet1.Cells(i, 3)
+    Sheet11.Cells(j, 4) = Sheet1.Cells(i, 4)
+    Sheet11.Cells(j, 5) = Sheet1.Cells(i, 5)
+    Sheet11.Cells(j, 6) = Sheet1.Cells(i, 6)
+    Sheet11.Cells(j, 7) = Sheet1.Cells(i, 7)
+    Sheet11.Cells(j, 8) = Sheet1.Cells(i, 8)
+    Sheet11.Cells(j, 9) = Sheet1.Cells(i, 9)
+    Sheet11.Cells(j, 10) = Sheet1.Cells(i, 10)
+    Sheet11.Cells(j, 11) = Sheet1.Cells(i, 11)
+    Sheet11.Cells(j, 12) = Sheet1.Cells(i, 13)
+    j = j + 1
+    End If
+    Next
+End Sub
 
 
