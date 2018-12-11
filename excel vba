@@ -48,7 +48,36 @@ End If
 
 End Sub
 
+
+// sheet lock from gowthaman
+
 Private Sub Worksheet_Activate()
 Sheet1.Cells(1, 5) = "addition of two numbers"
 End Sub
+Private Sub Worksheet_Activate()
+Sheet1.Unprotect ("9894083890")
+Sheet1.Cells.Locked = False
+
+Sheet1.Range("A:A").Locked = True
+Sheet1.Range("L:L").Locked = True
+Sheet1.Range("N:N").Locked = True
+
+Sheet1.Protect Password:="9894083890", UserInterfaceOnly:=True
+
+
+
+For i = 2 To 1000
+If (Sheet1.Cells(i, 12) = "") Then
+Sheet1.Range("a" & i & ":Q" & i).Interior.ColorIndex = 0
+Sheet1.Range("a" & i & ":Q" & i).Borders.ColorIndex = 0
+Else
+Sheet1.Range("a" & i & ":Q" & i).Interior.ColorIndex = 35
+Sheet1.Range("a" & i & ":Q" & i).Borders.ColorIndex = 50
+End If
+Next
+
+End Sub
+
+
+
 
